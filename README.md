@@ -61,11 +61,29 @@ This repository provisions a secure AWS system infrastructure using Terraform, i
     ```
 
 
-2. In root folder create `terraform.tfvars` file, example:
+2. In root file `variables.tf`, configure variables:
     ```bash
-    aws_region = "us-east-1"
-    jenkins_server_ami_id = "ami-02aeb3c8edb7fcc8d"
-    jenkins_server_instance_type = "t3.medium"
+    
+    variable "aws_region" {
+      type        = string
+      description = "AWS region to deploy resources"
+      default     = "us-east-1"
+    }
+
+
+    variable "jenkins_server_ami_id" {
+      type        = string
+      description = "AMI ID for Jenkins server"
+      default     = "ami-02aeb3c8edb7fcc8d"
+    }
+
+
+    variable "jenkins_server_instance_type" {
+        type        = string
+        description = "EC2 instance type for Jenkins server"
+        default     = "t3.medium"
+    }
+
     ```
 there are special variables - AWS region where resources will be deployed, AMI ID for Jenkins EC2 instance (must be prebuilt via Packer) and EC2 instance type (e.g. t3.large)
 
