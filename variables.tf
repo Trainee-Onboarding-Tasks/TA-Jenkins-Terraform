@@ -9,7 +9,7 @@ variable "aws_region" {
 variable "jenkins_server_ami_id" {
   type        = string
   description = "AMI ID for Jenkins server"
-  default     = "ami-02aeb3c8edb7fcc8d"
+  default     = "ami-0d7a103416f69a477"
 }
 
 
